@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>header</title>
+	<link rel="stylesheet" href="">
+
+	<style>
+		.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  transition: .5s ease-in-out;
+}
+.fixed-header .menu {
+  justify-content: space-around !important;
+}
+
+.site-header {
+  width: 100%;
+  box-shadow: 0 4px 25px 0 rgba(102, 102, 102, 0.16);
+  background-color: #ffffff;
+  height: 80px;
+  transition: .5s ease-in-out;
+}
+
+/* .site-title {
+  display: none;
+  margin-top: 35px;
+}
+@media (max-width: 991.98px) {
+  .site-title {
+    display: inline !important;
+  }
+}
+ */
+.nav {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
+}
+.nav .menuitem {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+@media (max-width: 991.98px) {
+  .nav .menuitem {
+    position: absolute;
+    background-color: #41C300;
+    padding: 25px;
+    top: 80px;
+    display: none;
+    flex-direction: column;
+    z-index: 2;
+    right: 0;
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .nav .menuitem {
+    display: flex !important;
+  }
+}
+.nav .menuitem ul {
+  display: flex;
+  margin-bottom: 0;
+}
+@media (max-width: 991.98px) {
+  .nav .menuitem ul {
+    flex-direction: column;
+  }
+}
+.nav .menuitem ul li {
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .nav .menuitem ul li {
+    margin-right: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .nav .menuitem ul li {
+    margin-right: 20px;
+  }
+}
+.nav .menuitem ul li a {
+  color: #424242;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+@media (max-width: 991.98px) {
+  .nav .menuitem ul li a {
+    color: #fff;
+  }
+}
+@media (min-width: 992px) {
+  .nav .menuitem ul li a {
+    font-size: 15px;
+  }
+}
+.nav .menuitem ul li a:hover {
+  text-decoration: none;
+  color: #41C300;
+}
+@media (max-width: 991.98px) {
+  .nav .menuitem ul li a:hover {
+    color: #fff;
+  }
+}
+.nav .menuitem .menu-menu-2-container li a {
+  text-transform: capitalize;
+  color: #888888;
+}
+@media (max-width: 991.98px) {
+  .nav .menuitem .menu-menu-2-container li a {
+    color: #fff;
+  }
+}
+.nav .menuitem .menu-menu-2-container li a:hover {
+  text-decoration: none;
+  color: #41C300;
+}
+@media (max-width: 991.98px) {
+  .nav .menuitem .menu-menu-2-container li a:hover {
+    color: #fff;
+  }
+}
+.nav .menuitem .menu-menu-2-container li a i {
+  color: #888888;
+}
+
+.ham {
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+@media (min-width: 992px) {
+  .ham {
+    display: none;
+  }
+}
+.ham span {
+  width: 25px;
+  height: 3px;
+  margin: auto;
+  background-color: #41C300;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: all 250ms ease;
+}
+.ham span:nth-child(2) {
+  top: 9px;
+}
+.ham span:last-child {
+  bottom: 0;
+}
+
+.close span:first-child {
+  transform: rotate(45deg);
+  top: 13px;
+}
+.close span:nth-child(2) {
+  width: 20px;
+  opacity: 0;
+  left: -20px;
+}
+.close span:last-child {
+  transform: rotate(-45deg);
+  top: 9px;
+}
+
+
+	</style>
+</head>
+<body>
+	
+	<header id="masthead" class="site-header">
+    <nav class="nav">
+      <div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="vto"></a></div>
+      <div class="ham">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      <div class="menuitem">
+
+        <ul>
+          <li><a href="#">ABOUT VTO</a></li>
+          <li><a href="#">PROJECTS</a></li>
+          <li><a href="#">EVENTS</a></li>
+          <li><a href="#">MEMBERSHIP</a></li>
+          <li><a href="#">DIRECTORY</a></li>
+          <li><a href="#">GALLERY</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Article</a></li>
+            <li><a href="#">login</a></li>
+          </ul>
+     <!--      <?php
+              wp_nav_menu( array(
+                          'theme_location' => 'menu-1',
+            ) );
+          ?>
+          <?php
+              wp_nav_menu( array(
+                          'theme_location' => 'menu-2',
+            ) );
+          ?>  -->
+      </div>
+     </nav>
+		</header><!-- #masthead -->
+		<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+
+<script>
+	/* ========================================== 
+scrollTop() >= 300
+Should be equal the the height of the header
+========================================== */
+
+  /*======================================
+  =            Hamburger Menu            =
+  ======================================*/
+
+  $(".ham").click(function() {
+    $('.menuitem').slideToggle();
+    $(this).toggleClass('active');
+    $(this).toggleClass('close');
+    
+  });
+
+  /*=====  End of Hamburger Menu  ======*/
+
+$(window).scroll(function(){
+	if ($(window).scrollTop() >= 800) {
+			$('.site-header').addClass('fixed-header');
+			// $('.site-title').show();
+	}
+	else {
+			$('.site-header').removeClass('fixed-header');
+			// $('.site-title').hide();
+	}
+});
+</script>
+
+</body>
+</html>
