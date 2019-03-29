@@ -1,0 +1,71 @@
+  <section class="rb-paradise">
+
+    <div class="owl-carousel owl-theme">
+      <?php if(have_rows('owl_carousel')) : while(have_rows('owl_carousel')) : the_row();?>
+      <div class="item">
+        <img src="<?php the_sub_field('carousel_image'); ?>" alt="rainbir d homestay">
+        <p>
+          <?php the_sub_field('carousel_text'); ?>
+        </p>
+      </div>
+      <?php endwhile; endif; ?>
+    </div>
+
+  </section>
+  
+  
+  
+  /*=============================================
+=            rb-paradise            =
+=============================================*/
+.rb-paradise {
+  position: relative; }
+.rb-paradise p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  max-width: 620px;
+  text-align: center;
+  font-size: 1.25rem; }
+@media (min-width: 576px) {
+  .rb-paradise p {
+    font-size: 1.625rem; } }
+@media (min-width: 992px) {
+  .rb-paradise p {
+    font-size: 2.8125rem;
+    width: 620px; } }
+.rb-paradise .owl-nav {
+  display: none; }
+.rb-paradise .owl-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+@media (min-width: 576px) {
+  .rb-paradise .owl-dots {
+    bottom: 23px; } }
+
+/*=====  End of rb-paradise  ======*/
+
+
+
+$(document).ready(function() {
+
+  /*=============================================
+  =            owl carousel HOME PAGE           =
+  =============================================*/
+  
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    nav:true,
+    autoplay: true,
+    responsive:{
+        0:{
+            items:1
+        }
+    }
+})
+
+});
